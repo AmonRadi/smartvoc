@@ -8,6 +8,7 @@ import random
 # Using in 'test_my_knowledge()'
 import pyfiglet
 # Using in 'show_ascii_logo()'
+import markdown
 
 
 def show_ascii_logo():
@@ -172,12 +173,12 @@ def save_json_file(file_path, data):
 
 def show_documentation():
     '''
-    Display user documentation retrieved from 'about.txt' file.
+    Display user documentation retrieved from 'README.md' file.
 
-    This function reads and prints the content of the 'about.txt' file, which contains information about the program and its usage. 
+    This function reads and prints the content of the 'README.md' file, which contains information about the program and its usage. 
     It is typically called from the 'main_menu()' function when the user selects option 4.
     '''
-    with open('about.txt', 'r') as file:
+    with open('README.md', 'r') as file:
         data = file.read()
         print(data)
 
