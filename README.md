@@ -28,3 +28,5 @@ I would greatly appreciate any feedback, code reviews, or recommendations.
 For any inquiries, please feel free to contact me at: 4m0n.ra.666@gmail.com.
 
 Thank you for your attention!
+
+*This project is licensed under the terms of the GNU General Public License v3.0*
