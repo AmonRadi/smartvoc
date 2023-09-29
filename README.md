@@ -7,6 +7,7 @@ To start the SmartVoc, type the following command in your terminal:
     python3 path/to/program/smartvoc.py
 
 How to Use:
+
     Create a New Dictionary
         Choose a theme for the words you want to learn.
         Enter '1' in the main menu, and give your new dictionary a name. For example, "Transport."
@@ -32,4 +33,4 @@ For any inquiries, please feel free to contact me at: 4m0n.ra.666@gmail.com.
 
 Thank you for your attention!
 
-*This project is licensed under the terms of the GNU General Public License v3.0*
+*This project is licensed under the terms of the GNU General Public License v3.0.*
