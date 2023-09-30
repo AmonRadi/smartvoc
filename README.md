@@ -4,6 +4,7 @@ You can create custom dictionaries dedicated to the topics you're studying,
 add related words along with their translations, and then test how well you've learned them.
 
 To start the SmartVoc, type the following command in your terminal:
+
     python3 path/to/program/smartvoc.py
 
 How to Use:

@@ -8,7 +8,6 @@ import random
 # Using in 'test_my_knowledge()'
 import pyfiglet
 # Using in 'show_ascii_logo()'
-import markdown
 
 
 def show_ascii_logo():
