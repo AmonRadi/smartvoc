@@ -104,32 +104,27 @@ def create_new_dict():
             if '/' in input_dictionary_name:
                 raise OSError
 
+            else:
+                os.makedirs(f'cache/dicts/{input_dictionary_name}')
+                with open(f"cache/dicts/{input_dictionary_name}/{input_dictionary_name}_dict.json", 'w') as dict_file:
+                    json.dump({}, dict_file)
+
+                print(
+                    f"\nNew dictionary '{input_dictionary_name}' created succesfully!\n", flush=True)
+                main_menu()
+                break
+
         except FileExistsError:
             print("A dictionary with that name already exists!")
-
         except FileNotFoundError:
             print("Sorry, the name was typed incorrectly.")
-
         except (ValueError, InterruptedError, PermissionError):
             pass
-
         except OSError:
             print(
                 r"Please, don't use the following symbols in the dictionary name: \, /, >, <, *, ?, :")
-
         except (KeyboardInterrupt, EOFError):
             exit('\nGoodbye!')
-
-        else:
-            os.makedirs(f'cache/dicts/{input_dictionary_name}')
-
-            with open(f"cache/dicts/{input_dictionary_name}/{input_dictionary_name}_dict.json", 'w') as dict_file:
-                json.dump({}, dict_file)
-
-            print(
-                f"\nNew dictionary '{input_dictionary_name}' created succesfully!\n", flush=True)
-            main_menu()
-            break
 
 
 def load_json_file(file_path):
