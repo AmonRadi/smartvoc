@@ -197,6 +197,8 @@ def choose_the_dict():
     Raises:
         FileNotFoundError: If 'dictionary_input' does not match any directory in 'cache/dicts'.
         EOFError: If the user decides to exit.
+        NotADirectoryError: If the user tries to input '.gitkeep'."
+
 
     This function is utilized by 'add_word()' and 'test_my_knowledge()' functions to retrieve the dictionary path.
     '''
@@ -204,11 +206,16 @@ def choose_the_dict():
         try:
             print("\nPlease type the name of the dictionary you need:")
             dicts_list = os.listdir('cache/dicts')
-            for dicts in dicts_list:
-                print(dicts)
+            for dict in dicts_list:
+                if dict != ".gitkeep":
+                    print(dict)
             dictionary_input = input('> ')
+
             if dictionary_input not in dicts_list:
                 raise FileNotFoundError()
+            elif dictionary_input == '.gitkeep':
+                raise NotADirectoryError
+
             else:
                 dictionary_path = f'cache/dicts/{dictionary_input}/{dictionary_input}_dict.json'
                 data = load_json_file(dictionary_path)
@@ -219,12 +226,13 @@ def choose_the_dict():
                     print(
                         f"The dictionary '{dictionary_input}' contains {num_elements} words.")
                 return dictionary_path
+
         except FileNotFoundError:
             print(
                 f"Sorry, the dictionary '{dictionary_input}' does not exist!\n")
         except EOFError:
             exit('\nGoodbye!')
-        except ValueError:
+        except (ValueError, NotADirectoryError):
             pass
 
 
